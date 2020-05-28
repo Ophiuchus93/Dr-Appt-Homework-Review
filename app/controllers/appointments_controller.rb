@@ -13,7 +13,7 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = @patient.appointments.new(appoint_params)
     @doctors = Doctor.all
-
+    
     if @appointment.save
       redirect_to patient_appointments_path(@patient)
     else  
@@ -33,6 +33,6 @@ class AppointmentsController < ApplicationController
     end
 
     def appoint_params
-      params.require(:appointment).permit(:date)
+      params.require(:appointment).permit(:doctor_id, :date)
     end 
 end
