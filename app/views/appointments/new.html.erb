@@ -1,0 +1,11 @@
+<h1>Add Appt</h1>
+<%= form_with(model: [@patient, @appointment], local: true) do |f| %>
+  <%= f.label :doctor %>
+  <%= f.select :doctor_id, @doctors.collect { |doctor| [doctor.full_name, doctor.id]} %>
+  <br />
+  <%= f.label :date %>
+  <%= f.text_field :date, required: true, placeholder: "Date" %>
+  <br />
+  <%= f.submit %>
+<% end %>
+

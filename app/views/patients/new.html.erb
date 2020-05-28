@@ -1,0 +1,12 @@
+<h1>ADD Patient</h1>
+<%= form_with(model: @patient, local: true) do |f| %>
+<div>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name, required: true, autofocus: true, placeholder: "First Name" %>
+</div>
+<div>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name, required: true, autofocus: true, placeholder: "Last Name" %>
+</div>
+<%= f.submit %>
+<% end %>
